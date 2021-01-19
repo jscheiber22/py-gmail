@@ -21,7 +21,7 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
 BROKE = False
 
 # TODO: make this automatic, you're better than this, come on bro
-PATH = "/home/james/Documents/Programming/gmail-library/"
+PATH = "/home/james/Documents/Programming/py-gmail/"
 
 
 class GMail:
