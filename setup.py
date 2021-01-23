@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='py-gmail',
-    version='0.1.1',
+    version='0.1.2',
     description='Library for more easily utilizing the GMail API.',
     author='James Scheiber',
     author_email='jscheiber22@gmail.com',
