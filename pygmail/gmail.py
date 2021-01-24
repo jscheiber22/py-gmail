@@ -67,10 +67,8 @@ class GMail:
                 for d in headers:
                     if d['name'] == 'Subject':
                         subject = d['value']
-                        print(subject)
                     if d['name'] == 'From':
                         sender = d['value']
-                        print(sender)
 
                 # Sorts out anything that does not include specified subject content
                 # Always use elif because you don't want duplicates duh
