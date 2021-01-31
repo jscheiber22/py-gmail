@@ -11,13 +11,19 @@ import base64
 import email
 from bs4 import BeautifulSoup
 
+'''
+For new installations, navigate to https://developers.google.com/gmail/api/quickstart/python to download new credentials to
+be able to run the program and get the pickle token and whatnot :)
 
-# If modifying these scopes, delete the file token.pickle and it will take you back through authorization for you new scope :)
+Also, if modifying these scopes, delete the file token.pickle and it will take you back through authorization for you new scope :)
+'''
 SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
 
-# Kinda thought I should comment on this, so basically the except it changes makes it so it'll raise errors
-# under correctly functioning circumstances, the except should pass because it should intentionally break sometimes for some reason, but it only breaks after
-# other breaks would happen if you have errors. Hopefully you are more confused now :).
+'''
+Kinda thought I should comment on this, so basically the except it changes makes it so it'll raise errors
+under correctly functioning circumstances, the except should pass because it should intentionally break sometimes for some reason, but it only breaks after
+other breaks would happen if you have errors. Hopefully you are more confused now :).
+'''
 BROKE = False
 
 # TODO: make this automatic, you're better than this, come on bro
@@ -169,25 +175,3 @@ class GMail:
 
         # Tries to send the message and upon success it prints what was sent
         message = (self.service.users().messages().send(userId='me', body=toSend).execute())
-
-
-
-
-'''
-Example code for testing purposes ONLY :) (Commented out by default for convenience as main purpose would be to use externally)
-'''
-
-'''
-if __name__ == '__main__':
-    # Creates email object
-    mail = GMail()
-
-    # Gets data from last 5 emails received
-    emails = mail.listEmails(maxCheck = 5)
-
-    # Prints data from emails
-    for email in emails:
-        print(emails[email]["Sender"])
-        print(emails[email]["Subject"])
-        print(emails[email]["Body"])
-'''
